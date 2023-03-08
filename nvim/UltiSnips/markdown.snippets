@@ -1,0 +1,527 @@
+snippet list "a latex list"
+\begin{enumerate}
+  \item ${1}
+\end{enumerate}
+endsnippet
+
+
+
+snippet com "comments in markdown"
+[//]: ${1:${VISUAL}} 
+endsnippet
+
+snippet "\bsp(\d+)" "a html space" r
+`!p
+snip.rv = r"&nbsp; " * int(match.group(1))
+`
+endsnippet
+
+
+snippet def "A high light block (definition) " 
+
+
+<div style = "background-color:#d0e1e1" markdown = "1">
+###### ${2:Title}
+<div style = "padding-left: 12px;" markdown = "1">
+${1:${VISUAL}} 
+</div>
+<br>
+</div>
+endsnippet
+
+snippet theo "A high light block (definition) " 
+
+<div style = "background-color:#e6f2ff" markdown = "1">
+###### ${2:Title}
+<div style = "padding-left: 12px;" markdown = "1">
+${1:${VISUAL}} 
+</div>
+<br>
+</div>
+endsnippet
+
+
+
+
+snippet proof "A collapsible text details tag (proof)"
+<details markdown="1" style="background-color: #f0f0f5">
+<summary> 点我展开证明proof </summary>
+${1:${VISUAL}} 
+</details>
+endsnippet
+
+snippet WEB "add a web link, markdown keyword straight series 1"
+[Link](${1:${VISUAL}} "${2::)}")
+endsnippet
+
+snippet br "paragraph break, markdown keyword straight series 2"
+<br>
+endsnippet
+
+snippet "<a" "add an anchel for inner link" r
+<a name="${1:${VISUAL}}"></a> $2
+endsnippet
+
+snippet bold "bold, markdown keyword straight series 3"
+<b> ${1:${VISUAL}} </b> $2
+endsnippet
+
+snippet un "underline, markdown keyword straight series 4"
+<u> ${1:${VISUAL}} </u> $2
+endsnippet
+
+snippet ita "Italic, markdown keyword straight series 5"
+<em> ${1:${VISUAL}} </em> $2
+endsnippet
+
+
+
+
+snippet $ "inline math mode, markdown keyword straight series 5"
+\\\\(${1:${VISUAL}}\\\\)${2}
+endsnippet
+
+snippet $$ "multi line math mode, markdown keyword straight series 6"
+\$\$
+${1:${VISUAL}}
+\$\$
+${2}
+endsnippet
+
+snippet ``` "code block, markdown keyword straight series 7"
+\`\`\`$1
+$2
+\`\`\`
+endsnippet
+
+snippet `` "inline code block, markdown keyword straight series 8"
+\`\`$1\`\`
+endsnippet
+
+
+snippet img "add image, markdown keyword straight series 9"
+<img src="$1" alt="${2:Image Failed}" width="${3:400}">$3
+endsnippet
+
+snippet \\t "text" 
+\\text{$1}
+endsnippet
+
+snippet [] "large matrix"
+\begin{align*}
+  \left[ ${1:\begin{array}{ccc}
+      P_{1, 1} & \cdots & P_{1, 2}\\\\
+      \vdots & \ddots & \vdots \\\\
+      P_{2, 1} & \cdots & P_{2, 2}
+    \end{array} }\right]
+\end{align*}
+endsnippet
+
+
+snippet ss "take a screen shot and save to the directory(post_asset) with title of the same title of your file(snip.basename) + number(in order)"
+`!p
+import os
+from subprocess import Popen
+from subprocess import call
+
+import sys
+
+
+# get the number that 
+
+print(snip.basename)
+root_path = 'image_saved'
+print(os.listdir(root_path))
+
+
+file_name_lists = [name.replace('.png','') for name in os.listdir(root_path) if snip.basename in name]
+
+file_numbs_exist = [int(i.split('_')[-1]) for i in file_name_lists]
+file_index = str(max(file_numbs_exist+[0]) + 1)
+file_name = snip.basename + '_' + file_index + '.png'
+
+# should be modified if change the directory name
+target_path = os.path.join(root_path,file_name)
+
+# exec the interactive screen capture
+# not be able to use subprocess.call, it would cause screencapture process not stop, 
+# and keep taking multiple screencapture, and the filename index breaks, I think this is a snippet bug.
+
+commend = "screencapture -i " + target_path + ' ; ' + 'cp ' + target_path + ' ./{}/'.format(root_path) + file_name
+Popen(commend, shell = True)
+
+# snip.rv = '![alt image path: '+ file_name +' failed](' + target_path +' "' +file_name+'")'
+target_path = os.path.join(os.getcwd(), target_path)
+snip.rv = '<img src="{0}" alt="{1}" width="750"/>'.format(target_path, file_name + ' failed')
+`
+endsnippet
+
+
+
+snippet "[\[\(](\d+)x(\d+)[\]\)]" "M (rows) X N (columns) matrix with 0" r
+`!p
+M,N = match.groups()
+M = int(M)
+N = int(N)
+start = match.group(0)[0]
+end = match.group(0)[-1]
+
+row = "\t\t" + "0 &\t" * (N-1) + '0 \\\\ \n'
+cord = row * M
+result = "\\begin{align*} \n\t\\left" + start + "\\begin{array}{ccc}\n" + cord +"\t\\end{array}\n\t\\right" + end + "\n\\end{align*}"
+
+snip.rv = result
+`
+endsnippet
+
+
+snippet cases "large brackets of many line"
+ \begin{cases}
+	${1:${VISUAL}}\\\\
+ \end{cases}
+endsnippet
+
+
+snippet () "large matrix ()"
+\begin{align*}
+  \left( ${1:\begin{array}{ccc}
+      P_{1, 1} & \cdots & P_{1, 2}\\\\
+      \vdots & \ddots & \vdots \\\\
+      P_{2, 1} & \cdots & P_{2, 2}
+    \end{array} }\right)
+\end{align*}
+endsnippet
+
+
+snippet pisewise "pise wise function"
+f(x) &= 
+	\\begin{cases} 
+	      0 &  \\text{ if } x \\in C \\\\
+	      + \\infty & \\text{otherwise} 
+	\\end{cases} \\\\
+endsnippet
+
+snippet dis "Force an inline tex into display mode (sum with under subscribt)"
+\displaystyle
+endsnippet
+
+snippet sum "simplify the sum symbol"
+\\sum_{${1:i \\in S}}^{${2:N}}
+endsnippet
+
+snippet inf "infinity sign"
+\infty
+endsnippet
+
+snippet min "minimum notation"
+\\min_{x\\in \\mathbb{R}^{n}} 
+endsnippet
+
+snippet max "minimum notation"
+\\max_{x\\in \\mathbb{R}^{n}} 
+endsnippet
+
+
+snippet "\b([a-zA-Z](?![\w.]))" "math mode character symbol" r
+`!p snip.rv = "\\\\(" + match.group(0)[0]`_{$1}^{$2}\\\\) $3
+endsnippet
+
+
+
+snippet "\bcal_[a-zA-Z]" "Calligraphic symbol" r
+`!p
+snip.rv = "\mathcal{" + match.group(0)[0] + "}"
+`
+endsnippet
+
+snippet "\b[A-Z](\d+)" "R x nth order" r
+`!p
+snip.rv = "\mathbb{" + match.group(0)[0] + "}^{" + match.group(1) + "}"
+`
+endsnippet
+
+
+snippet "\w+'" "use to get the prime" r
+`!p
+snip.rv = "{" + match.group(0)[0:-1] + "^\prime" "}"
+`
+endsnippet
+
+
+snippet "\w+''" "use to get the prime" r
+`!p
+snip.rv = "{" + match.group(0)[0:-2] + "^{\prime \prime}" "}"
+`
+endsnippet
+
+
+
+snippet fr "a general fraction"
+{\\frac{${1:Nominator}}{${2:Denominator}}} $3
+endsnippet
+
+snippet frpr "partial derivative fraction form"
+{\\frac{\\partial ${1:Nominator}}{\\partial ${2:Denominator}}} $3
+endsnippet
+
+snippet frd "derivative fraction form"
+{\\frac{d ${1:Nominator}}{d ${2:Denominator}}} $3
+endsnippet
+
+snippet "frd([a-z])(\d)" "derivative fraction form" r
+`!p
+var, order = match.groups()
+if order == '1': 
+	order = ""
+else:
+	order = '^'+order
+snip.rv = "{{\\frac{{d{1} {0}}}{{d {2}{3} }}}}".format(t[1], order, var, order)
+` ${1:y}
+endsnippet
+
+
+
+snippet "(\d+)-(\d+)" "simple fraction" r
+`!p
+nominator, denominator = match.groups()
+snip.rv = "{\\frac{" + nominator+"}{"+denominator +"}}"
+`
+endsnippet
+
+
+snippet $topo "topology symbol"
+$\mathcal{T}$
+endsnippet
+
+snippet topo "topology symbol"
+\mathcal{T}
+endsnippet
+
+snippet "sf\d" "get the inverse function"
+`!p
+c = match.group(0)
+snip.rv = 'sdf' + c
+`
+endsnippet
+
+
+snippet no "no indent" b
+\noindent
+endsnippet
+
+snippet minip "create a minipage with centering" b
+{\center
+\begin{minipage}{${2:0.75}\linewidth}
+	${1:${VISUAL}}
+\end{minipage}
+\par
+}
+endsnippet
+
+snippet align "create a align of equation"
+\begin{align*}
+	$1 &= $2 \\\\
+\end{align*}
+endsnippet
+
+snippet bar "put a bar over the character"
+\\bar\{$1\}
+endsnippet
+
+
+snippet th "theta"
+\theta
+endsnippet
+
+snippet matlabcode
+\begin{lstlisting}[language=Matlab]
+$1
+\end{lstlisting}
+endsnippet
+
+
+
+
+
+snippet "(\w+).under" "dot what? in markdown series 1 (postfix)" r
+<u>`!p snip.rv = match.group(1)`$2</u>$1
+endsnippet
+
+
+
+
+
+
+snippet "(\w+).bar" "dot what? in latex series 1 (bar)" r
+\\bar{`!p snip.rv = match.group(1)`$2}$1
+endsnippet
+
+
+snippet "(\w+).box" "dot what? in latex series 2 (box)" r
+\\fbox{`!p snip.rv = match.group(1)`$2}$1
+endsnippet
+
+snippet "(\w+).bold" "dot what? in latex series 3 (bold text)" r
+\\boldsymbol{`!p snip.rv = match.group(1)`$2}$1
+endsnippet
+
+snippet "(\w+).ti" "dot what? in latex, series 4 math tilde head" r
+`!p snip.rv = "\\tilde{"+match.group(1) +"}"` $0
+endsnippet
+
+snippet "(\w+).wti" "dot what? in latex, series 5 math tilde head" r
+`!p snip.rv = "\\widetilde{"+match.group(1) +"}"` $0
+endsnippet
+
+snippet "(\w+).bb" "dot what? in latex series 6 (mathbb)" r
+\\mathbb{`!p snip.rv = match.group(1)`$2}$1
+endsnippet
+
+snippet "(\w+).sq" "dot what? in latex series 7 (sqrt)" r
+\\sqrt{`!p snip.rv = match.group(1)`$2}$1
+endsnippet
+
+
+snippet "(\w+).hat" "dot what? in latex series 8 (sqrt)" r
+\\widehat{`!p snip.rv = match.group(1)`$2}$1
+endsnippet
+
+
+
+
+
+snippet <--> "Long left right arrow, math latex symbol series 1"  
+\\Longleftrightarrow
+endsnippet
+
+snippet <-> "left right arrow, math latex symbol series 2"  
+\\Leftrightarrow
+endsnippet
+
+snippet <> "left angle right angle, math latex symbol series 3"
+\\langle ${1:${VISUAL}} \\rangle $2
+endsnippet
+
+snippet || "the norm symbol, math latex symbol series 4" 
+\\| ${1:${VISUAL}} \\| $2
+endsnippet
+
+snippet conv "the convolution operator, math latex symbol series 5"
+\\ast
+endsnippet
+
+
+snippet h== "the left right arrow symbol, math latex symbol series 6" 
+\Longleftrightarrow
+endsnippet
+
+
+snippet v== "the up down arrow symbol, math latex symbol series 7" 
+\Updownarrow
+endsnippet
+
+
+snippet -> "the right arrow symbol, math latex symbol series 8" 
+\Rightarrow
+endsnippet
+
+snippet <- "the left arrow symbol, math latex symbol series 9" 
+\Leftarrow
+endsnippet
+
+snippet <| "the left triangle symbol, math latex symbol series 10"
+\vartriangleleft 
+endsnippet
+
+snippet |> "the right triangle symbol, math latex symbol series 11"
+\vartriangleright  
+endsnippet
+
+snippet <|_ "the left triangle symbol, math latex symbol series 12"
+\trianglelefteq
+endsnippet
+
+snippet |>_ "the right triangle symbol, math latex symbol series 13"
+\trianglerighteq  
+endsnippet
+
+
+snippet sq "sqrt, operation series 1"
+\\sqrt{${1:${VISUAL}}} ${2}
+endsnippet
+
+snippet bra "create a bracket, operation series 2"
+\\{ ${1:${VISUAL}} \\} ${2}
+endsnippet
+
+snippet bbra "create a bigger bracket, operation series 2"
+\\bigg\\{ ${1:${VISUAL}} \\bigg\\} ${2}
+endsnippet
+
+
+snippet ex "exponential, operation series 3"
+e^{${1:${VISUAL}}} ${2}
+endsnippet
+
+snippet ' "create the derivative sign, \prime, operation series 4"
+\prime
+endsnippet
+
+snippet | "create an absolute bracket, operation series 5"
+\vert
+endsnippet
+
+snippet \* "star product, operation series 6"
+\ast
+endsnippet
+
+
+snippet al "alpha, geek characters short cut, series 1"
+\alpha
+endsnippet
+
+snippet del "delta, geek characters short cut, series 2"
+\delta
+endsnippet
+
+snippet bt "beta, geek characters short cut, series 3"
+\beta
+endsnippet
+
+snippet lam "lambda, geek characters short cut, series 4"
+\lambda
+endsnippet
+
+snippet om "omega, geek characters short cut, series 5"
+\omega
+endsnippet
+
+snippet ps "psi, geek characters short cut, series 6"
+\psi
+endsnippet
+
+
+snippet Ps "Psi, geek characters short cut, series 7"
+\Psi
+endsnippet
+
+snippet ep "epsilon, geek characters short cut, series 8"
+\epsilon
+endsnippet
+
+snippet pr "partial derivative sign"
+\partial
+endsnippet
+
+snippet tx "text{}, latex special keyword short cut, series 1"
+\text{${1:${VISUAL}}}
+endsnippet
+
+snippet lim "the limit latex special keyword short cut, series 2"
+\\lim_{n \\to \\infty} $0
+endsnippet
+
+snippet int "intergration the limit latex special keyword short cut, series 2"
+\\int_{0}^{\\infty} $0 dx
+endsnippet
+

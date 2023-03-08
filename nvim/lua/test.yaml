@@ -1,0 +1,12 @@
+
+
+normal:
+  CTRL_o: jump list 
+  CTRL_i: jump list 
+  zz: 视野回到中间
+
+insert:
+  CTRL_u: clear the current line text
+  CTRL_o: Escape from insert mode to normal mode for only one action
+  CTRL_[: Escape form insert mode to normal mode normally
+

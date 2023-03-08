@@ -1,0 +1,94 @@
+snippet "[a-zA-Z](\d+)" "R x nth order" r
+`!p
+snip.rv = "\mathbb{" + match.group(0)[0] + "}^{" + match.group(1) + "}"
+`
+endsnippet
+
+snippet "\w+'" "use to get the prime" r
+`!p
+snip.rv = "{" + match.group(0)[0:-1] + "^\prime" "}"
+`
+endsnippet
+
+snippet "(\d+)-(\d+)" "simple fraction" r
+`!p
+nominator, denominator = match.groups()
+snip.rv = "{\\frac{" + nominator+"}{"+denominator +"}}"
+`
+endsnippet
+
+
+snippet $topo "topology symbol"
+$\mathcal{T}$
+endsnippet
+
+snippet topo "topology symbol"
+\mathcal{T}
+endsnippet
+
+snippet "sf\d" "get the inverse function"
+`!p
+c = match.group(0)
+snip.rv = 'sdf' + c
+`
+endsnippet
+
+
+snippet no "no indent" b
+\noindent
+endsnippet
+
+snippet minip "create a minipage with centering" b
+{\center
+\begin{minipage}{${2:0.75}\linewidth}
+	${1:${VISUAL}}
+\end{minipage}
+\par
+}
+endsnippet
+
+snippet align "create a align of equation"
+\begin{align*}
+	$1 &= $2 \\\\
+\end{align*}
+endsnippet
+
+
+snippet th "theta"
+\theta
+endsnippet
+
+snippet matlabcode
+\begin{lstlisting}[language=Matlab]
+$1
+\end{lstlisting}
+endsnippet
+
+
+snippet bra "create a bracket"
+\\{ ${1:${VISUAL}} \\} ${2}
+endsnippet
+
+snippet $ "math mode"
+\$${1:${VISUAL}}\$${2}
+endsnippet
+
+snippet ' "create the derivative sign, \prime"
+\prime
+endsnippet
+
+snippet | "create an absolute bracket"
+|${1:${VISUAL}}|
+endsnippet
+
+snippet al "alpha"
+\alpha
+endsnippet
+
+snippet tx "text{}"
+\text{${1:${VISUAL}}}
+endsnippet
+
+snippet bt "beta"
+\beta
+endsnippet
