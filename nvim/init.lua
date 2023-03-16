@@ -22,6 +22,8 @@ require("plugin-config.imselect_config")
 
 require("plugin-config.nvim-comment-config")
 
+require("plugin-config.symbolsoutline")
+
 require("lsp.setup")
 
 require("lsp.cmp")
