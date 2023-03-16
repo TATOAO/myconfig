@@ -56,4 +56,4 @@ local opts = {
 
 
 local lspconfig = require("lspconfig")
-lspconfig.sumneko_lua.setup(opts)
+lspconfig.lua_ls.setup(opts)

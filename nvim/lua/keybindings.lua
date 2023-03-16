@@ -8,9 +8,13 @@ map("v", "K", ":move '<-2<CR>gv-gv", opt)
 
 -- map big I for inserting with default keyboard input chinese
 
-map("n", "I", ":! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>i", opt)
-map("n", "O", ":! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>o", opt)
-
+if vim.fn.has("macunix") == 1 then
+	map("i", "I", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>i", opt)
+	map("i", "O", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>o", opt)
+elseif vim.fn.has("unix") == 1 then
+	-- map("i", "I", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>i", opt)
+	-- map("i", "O", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>o", opt)
+end
 
 map("n", "<leader>n", ":nohl<CR>", opt)
 

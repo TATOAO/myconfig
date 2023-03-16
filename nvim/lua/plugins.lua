@@ -31,7 +31,7 @@ packer.startup(
 			requires = {
 				'kyazdani42/nvim-web-devicons', -- optional, for file icons
 			},
-			tag = 'nightly' -- optional, updated every week. (see issue #1193)
+			tag = 'nightly'         -- optional, updated every week. (see issue #1193)
 		}
 
 		-- lualine 底部标签
@@ -113,7 +113,24 @@ packer.startup(
 		-- Lspconfig
 		use({ "neovim/nvim-lspconfig" })
 
-		use('keaising/im-select.nvim')
+		function os.capture(cmd, raw)
+			local f = assert(io.popen(cmd, 'r'))
+			local s = assert(f:read('*a'))
+			f:close()
+			if raw then return s end
+			s = string.gsub(s, '^%s+', '')
+			s = string.gsub(s, '%s+$', '')
+			s = string.gsub(s, '[\n\r]+', ' ')
+			return s
+		end
+
+		if (os.capture('uname') == 'Linux')
+		then
+			-- nonthing
+		else
+			-- if mac then use im-select
+			use('keaising/im-select.nvim')
+		end
 
 		-- indent-blankline
 		use("lukas-reineke/indent-blankline.nvim")
@@ -128,8 +145,12 @@ packer.startup(
 		use({ "untitled-ai/jupyter_ascending.vim" })
 
 		-- Markdown preview
-		use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
-			setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+		use({
+			"iamcco/markdown-preview.nvim",
+			run = "cd app && npm install",
+			setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+			ft = { "markdown" },
+		})
 
 		use('karb94/neoscroll.nvim')
 
@@ -137,7 +158,9 @@ packer.startup(
 		-- diff tool
 		use({ 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' })
 
+		use 'simrat39/symbols-outline.nvim'
 
+		use 'nanotee/sqls.nvim'
 
 
 		-- intent object
