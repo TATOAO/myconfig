@@ -36,4 +36,7 @@ require('neoscroll').setup()
 
 require('plugin-config.treesitter_textobject')
 
+-- require("toggleterm-config")
+
+require("toggleterm").setup {}
 -- require('indent_object').setup()

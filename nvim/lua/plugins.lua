@@ -162,6 +162,13 @@ packer.startup(
 
 		use 'nanotee/sqls.nvim'
 
+		use { "akinsho/toggleterm.nvim", tag = '*', config = function()
+			require("toggleterm").setup()
+		end }
+
+
+
+
 
 		-- intent object
 		-- use 'urxvtcd/vim-indent-object'
