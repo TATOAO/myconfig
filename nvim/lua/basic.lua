@@ -4,6 +4,8 @@ vim.g.encoding = "UTF-8"
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
+
+-- TODO set by username
 vim.g.python3_host_prog = "/home/atatlan/anaconda3/bin/python"
 vim.g.python_host_prog = "/home/atatlan/anaconda3/bin/python"
 
@@ -35,10 +37,14 @@ vim.o.sidescrolloff = 4
 vim.g.UltiSnipsJumpForwardTrigger = "<C-l>"
 vim.g.UltiSnipsJumpBackwardTrigger = "<C-h>"
 -- UtiSnips change trigger key
-
+--
+-- vim.g.UltiSnipsExpandTrigger = "<C-l>"
+-- vim.g.UltiSnipsJumpForwardTrigger = "<C-l#region
+--
 vim.g.copilot_no_tab_map = true
-vim.api.nvim_set_keymap("i", "<C-e>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 vim.api.nvim_set_keymap("i", "<C-m>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.api.nvim_set_keymap("i", "<C-s>", '<Plug>(copilot-next)', { noremap = false })
+vim.api.nvim_set_keymap("i", "<C-a>", '<Plug>(copilot-previous)', { noremap = false })
 
 -- set up catppuccin
 -- vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha

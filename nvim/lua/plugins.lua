@@ -145,6 +145,8 @@ packer.startup(
 		use({ "untitled-ai/jupyter_ascending.vim" })
 
 		-- Markdown preview
+		-- NOTE: require npm and yarn installed to do PackerInstall, ortherwise
+		-- reinstall by deleted and installed again
 		use({
 			"iamcco/markdown-preview.nvim",
 			run = "cd app && npm install",

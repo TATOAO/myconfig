@@ -4,7 +4,9 @@ import pandas as pd
 
 this_is_my_function(alan = 'xxxx')
 
+
 df = pd.read_csv("dss.csv")
 
-from mymodule import *
+# try to print the dataframe
+print(df)
 
