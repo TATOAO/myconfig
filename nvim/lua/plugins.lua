@@ -144,7 +144,13 @@ packer.startup(
 		-- jupyter accent
 		use({ "untitled-ai/jupyter_ascending.vim" })
 
+
+		-- csv vim
+		use({ "chrisbra/csv.vim" })
+
 		-- Markdown preview
+		-- NOTE: require npm and yarn installed to do PackerInstall, ortherwise
+		-- reinstall by deleted and installed again
 		use({
 			"iamcco/markdown-preview.nvim",
 			run = "cd app && npm install",
@@ -161,6 +167,13 @@ packer.startup(
 		use 'simrat39/symbols-outline.nvim'
 
 		use 'nanotee/sqls.nvim'
+
+		use { "akinsho/toggleterm.nvim", tag = '*', config = function()
+			require("toggleterm").setup()
+		end }
+
+
+
 
 
 		-- intent object

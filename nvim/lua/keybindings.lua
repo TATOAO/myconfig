@@ -103,11 +103,11 @@ pluginKeys.cmp = function(cmp)
 		-- 下一个
 		["<C-j>"] = cmp.mapping.select_next_item(),
 		-- 确认
-		["<CR>"] = cmp.mapping.confirm({
+		["<C-m>"] = cmp.mapping.confirm({
 			select = true,
 			behavior = cmp.ConfirmBehavior.Replace
 		}),
-		-- tab 已经可以确认了
+		-- 取消
 		["<C-l>"] = cmp.mapping({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
@@ -115,6 +115,19 @@ pluginKeys.cmp = function(cmp)
 	}
 	-- other command https://blog.51cto.com/u_11090813/5667800
 end
+
+-- toggle terminal
+map("t", "<C-[>", "<C-\\><C-n>", opt)
+map("t", "esc", "<C-\\><C-n>", opt)
+map("n", "<leader>\\", ":ToggleTerm<CR>", opt)
+map("t", "<leader>\\", "<C-\\><C-n>:ToggleTerm<CR>", opt)
+map("x", "<leader>t", "<C-u>:ToggleTermSendVisualLines<CR>", opt)
+
+
+-- delete self: xxx,
+map("n", "<leader>ds", ":%s/self:\\W\\=.\\{-},/self,/<CR>/from .__init__<CR>:CommentToggle<CR>:nohl<CR>", opt)
+-- map("n", "<leader>sd", ":%s/self:\\W\\=.\\{-},/self,/<CR>/from .__init__<CR>:CommentToggle<CR>:nohl<CR>", opt)
+map("x", "<leader>sd", 'y:%s/self, /self: <C-r><C-r>", /<CR>/from .__init__<CR>:nohl<CR>:CommentToggle<CR>', opt)
 
 
 return pluginKeys

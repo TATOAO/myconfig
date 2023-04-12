@@ -18,7 +18,9 @@ require("plugin-config.nvim-treesitter")
 
 require("plugin-config.indent-blankline")
 
-require("plugin-config.imselect_config")
+if vim.fn.has("macunix") == 1 then
+	require("plugin-config.imselect_config")
+end
 
 require("plugin-config.nvim-comment-config")
 
@@ -36,4 +38,7 @@ require('neoscroll').setup()
 
 require('plugin-config.treesitter_textobject')
 
+-- require("toggleterm-config")
+
+require("toggleterm").setup {}
 -- require('indent_object').setup()
