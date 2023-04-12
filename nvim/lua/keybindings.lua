@@ -129,4 +129,5 @@ map("n", "<leader>ds", ":%s/self:\\W\\=.\\{-},/self,/<CR>/from .__init__<CR>:Com
 -- map("n", "<leader>sd", ":%s/self:\\W\\=.\\{-},/self,/<CR>/from .__init__<CR>:CommentToggle<CR>:nohl<CR>", opt)
 map("x", "<leader>sd", 'y:%s/self, /self: <C-r><C-r>", /<CR>/from .__init__<CR>:nohl<CR>:CommentToggle<CR>', opt)
 
+
 return pluginKeys

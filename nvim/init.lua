@@ -18,7 +18,9 @@ require("plugin-config.nvim-treesitter")
 
 require("plugin-config.indent-blankline")
 
-require("plugin-config.imselect_config")
+if vim.fn.has("macunix") == 1 then
+	require("plugin-config.imselect_config")
+end
 
 require("plugin-config.nvim-comment-config")
 
