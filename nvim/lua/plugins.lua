@@ -174,6 +174,12 @@ packer.startup(
 
 
 
+		-- images
+		use { 'edluffy/hologram.nvim' }
+		use { 'samodostal/image.nvim',
+			requires = { 'nvim-lua/plenary.nvim' }
+		}
+		use { 'm00qek/baleia.nvim', tag = 'v1.3.0' }
 
 
 		-- intent object
