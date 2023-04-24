@@ -121,7 +121,7 @@ map("t", "<C-[>", "<C-\\><C-n>", opt)
 map("t", "esc", "<C-\\><C-n>", opt)
 map("n", "<leader>\\", ":ToggleTerm<CR>", opt)
 map("t", "<leader>\\", "<C-\\><C-n>:ToggleTerm<CR>", opt)
-map("x", "<leader>t", "<C-u>:ToggleTermSendVisualLines<CR>", opt)
+map("x", "<leader>t", ":ToggleTermSendVisualLines<CR>", opt)
 
 
 -- delete self: xxx,

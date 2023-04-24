@@ -9,5 +9,5 @@ function os.capture(cmd, raw)
 	return s
 end
 
-name = os.capture('users')
+name = os.capture('whoami')
 print(name)

@@ -5,16 +5,9 @@ packer.startup(
 		use 'wbthomason/packer.nvim'
 		-- 你的插件列表...
 		--
-		--
 		use { "williamboman/mason.nvim" }
 
 		use "williamboman/mason-lspconfig.nvim"
-
-		-- colorscheme lush
-		use "rktjmp/lush.nvim"
-
-		-- tokyonight
-		-- use("folke/tokyonight.nvim")
 
 		-- oceanic next
 		use('mhartington/oceanic-next')
@@ -181,6 +174,13 @@ packer.startup(
 		}
 		use { 'm00qek/baleia.nvim', tag = 'v1.3.0' }
 
+
+		use {
+			"loctvl842/monokai-pro.nvim",
+			config = function()
+				require("monokai-pro").setup()
+			end
+		}
 
 		-- intent object
 		-- use 'urxvtcd/vim-indent-object'

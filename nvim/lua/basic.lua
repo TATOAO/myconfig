@@ -9,7 +9,6 @@ vim.g.loaded_netrwPlugin = 1
 function os.capture(cmd, raw)
 	local f = assert(io.popen(cmd, 'r'))
 	local s = assert(f:read('*a'))
-	print(s)
 	f:close()
 	if raw then return s end
 	s = string.gsub(s, '^%s+', '')
@@ -18,20 +17,20 @@ function os.capture(cmd, raw)
 	return s
 end
 
-local username = os.capture('users')
+local username = os.capture('whoami')
 if (username == 'atatlan')
 then
-	vim.notify("没有找到 privider")
-	vim.g.python3_host_prog = "/home/atatlan/anaconda3/bin/python"
-	vim.g.python_host_prog = "/home/atatlan/anaconda3/bin/python"
-	-- 30.171.118.22 machine
+	PROVIDER_PATH = "/home/atatlan/anaconda3/bin/python"
 elseif (username == 'liangwentao')
 then
-	vim.g.python3_host_prog = "/mnt/gequn/home/envs/anaconda3/bin/python"
-	vim.g.python_host_prog = "/mnt/gequn/home/envs/anaconda3/bin/python"
+	-- 30.171.118.22 machine
+	PROVIDER_PATH = "/mnt/gequn/home/envs/anaconda3/bin/python"
 else
-	-- pass
+	print("自动识别python provider 失败")
 end
+
+vim.g.python3_host_prog = PROVIDER_PATH
+vim.g.python_host_prog = PROVIDER_PATH
 
 
 -- utf8
@@ -93,9 +92,6 @@ local function open_nvim_tree(data)
 	-- open the tree, find the file but don't focus it
 	require("nvim-tree.api").tree.toggle({ focus = false, find_file = true, })
 end
-
--- automatically open nvimTree
-vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 -- automatically open nvimTree
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
