@@ -42,7 +42,7 @@ map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 map("i", "<C-l>", "<C-[>:BufferLineCycleNext<CR>", opt)
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("i", "<C-h>", "<C-[>:BufferLineCyclePrev<CR>", opt)
-map("n", "<C-q>", ":Bdelete<CR>", opt)
+map("n", "<C-q>", ":bd #<CR>", opt)
 
 
 
