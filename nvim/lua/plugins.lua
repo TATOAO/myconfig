@@ -9,6 +9,11 @@ require("lazy").setup({
 	{ "lukas-reineke/indent-blankline.nvim" },
 
 	{ "catppuccin/nvim", as = "catppuccin" },
+	{"loctvl842/monokai-pro.nvim",
+		config = function()
+			require("monokai-pro").setup()
+		end
+	},
 	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 	'famiu/bufdelete.nvim',
 
