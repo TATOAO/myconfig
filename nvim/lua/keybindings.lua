@@ -8,9 +8,10 @@ map("v", "K", ":move '<-2<CR>gv-gv", opt)
 
 -- map big I for inserting with default keyboard input chinese
 
+
 if vim.fn.has("macunix") == 1 then
-	map("i", "I", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>i", opt)
-	map("i", "O", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>o", opt)
+	map("n", "I", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>i", opt)
+	map("n", "O", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>o", opt)
 elseif vim.fn.has("unix") == 1 then
 	-- map("i", "I", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>i", opt)
 	-- map("i", "O", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>o", opt)
@@ -42,7 +43,7 @@ map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 map("i", "<C-l>", "<C-[>:BufferLineCycleNext<CR>", opt)
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("i", "<C-h>", "<C-[>:BufferLineCyclePrev<CR>", opt)
-map("n", "<C-q>", ":Bdelete<CR>", opt)
+map("n", "<C-q>", ":Bdelete <CR>", opt)
 
 
 

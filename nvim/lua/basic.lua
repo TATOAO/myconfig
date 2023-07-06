@@ -6,8 +6,8 @@ vim.g.loaded_netrwPlugin = 1
 
 
 -- TODO set by username
-vim.g.python3_host_prog = "/home/atatlan/anaconda3/bin/python"
-vim.g.python_host_prog = "/home/atatlan/anaconda3/bin/python"
+vim.g.python3_host_prog = "/usr/local/bin/python3"
+vim.g.python_host_prog = "/usr/local/bin/python3"
 
 
 -- utf8
@@ -38,14 +38,14 @@ vim.g.UltiSnipsJumpForwardTrigger = "<C-l>"
 vim.g.UltiSnipsJumpBackwardTrigger = "<C-h>"
 -- UtiSnips change trigger key
 --
--- vim.g.UltiSnipsExpandTrigger = "<C-l>"
+vim.g.UltiSnipsExpandTrigger = "<C-l>"
 -- vim.g.UltiSnipsJumpForwardTrigger = "<C-l#region
 --
-vim.g.copilot_no_tab_map = true
-vim.api.nvim_set_keymap("i", "<C-m>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-vim.api.nvim_set_keymap("i", "<C-s>", '<Plug>(copilot-next)', { noremap = false })
-vim.api.nvim_set_keymap("i", "<C-a>", '<Plug>(copilot-previous)', { noremap = false })
-
+-- vim.g.copilot_no_tab_map = true
+-- vim.api.nvim_set_keymap("i", "<C-m>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+-- vim.api.nvim_set_keymap("i", "<C-s>", '<Plug>(copilot-next)', { noremap = false })
+-- vim.api.nvim_set_keymap("i", "<C-a>", '<Plug>(copilot-previous)', { noremap = false })
+--
 -- set up catppuccin
 -- vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 --
