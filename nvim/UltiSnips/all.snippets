@@ -1,0 +1,20 @@
+snippet snip "create snippet"
+`!p snip.rv = "snippet"` $1
+$2
+`!p
+snip.rv = "endsnippet"
+`
+endsnippet
+
+snippet date "YYYY-MM-DD" w
+`!v strftime("%Y-%m-%d")`
+endsnippet
+
+snippet [d "YYYY-MM-DD"
+[`!v strftime("%Y-%m-%d")`]
+endsnippet
+
+
+snippet time "hh:mm" w
+`!v strftime("%H:%M")`
+endsnippet
