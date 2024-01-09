@@ -31,6 +31,17 @@ require("plugin-config.lualine")
 
 require("plugin-config.telescope")
 
+
+-- image
+--
+-- require("plugin-config.image_viewer")
+
+-- require("plugin-config.hologram_image_viewer")
+
+-- require("plugin-config.image_color_support")
+
+--------------------------------------
+
 require("plugin-config.nvim-treesitter")
 
 require("plugin-config.indent-blankline")

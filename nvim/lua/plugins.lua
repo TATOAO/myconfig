@@ -58,11 +58,16 @@ require("lazy").setup({
 				-- If you want to enable filetype detection based on treesitter:
 				-- requires = { "nvim-treesitter/nvim-treesitter" },
 			},
-},
+	},
 	-- csv vim
 	"chrisbra/csv.vim",
 	'simrat39/symbols-outline.nvim',
 	'nanotee/sqls.nvim',
 	'karb94/neoscroll.nvim',
-		{'akinsho/toggleterm.nvim', version = "*", config = true},
+	{'akinsho/toggleterm.nvim', version = "*", config = true},
+	{
+		'mrcjkb/rustaceanvim',
+		version = '^3', -- Recommended
+		ft = { 'rust' },
+	}
 })
