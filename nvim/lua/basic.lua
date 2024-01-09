@@ -6,8 +6,9 @@ vim.g.loaded_netrwPlugin = 1
 
 
 -- TODO set by username
-vim.g.python3_host_prog = "/usr/local/bin/python3"
-vim.g.python_host_prog = "/usr/local/bin/python3"
+vim.g.python3_host_prog = "/home/atatlan/anaconda3/bin/python"
+vim.g.python_host_prog = "/home/atatlan/anaconda3/bin/python"
+
 
 
 -- utf8
