@@ -8,7 +8,7 @@ local opts = {
 				useLibraryCodeForTypes = true,
 				-- extraPaths = { "/Users/tatoaoliang/.config/nvim" }
 			},
-			pythonPath = "/Users/tatoaoliang/opt/anaconda3/bin/python"
+			pythonPath = "/Users/tatoaoliang/miniconda3/bin/python"
 		}
 
 	},

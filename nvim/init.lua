@@ -43,6 +43,8 @@ require("plugin-config.nvim-comment-config")
 
 require("plugin-config.symbolsoutline")
 
+require("plugin-config.python-dap")
+
 require("lsp.setup")
 
 require("lsp.cmp")

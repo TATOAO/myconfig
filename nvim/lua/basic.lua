@@ -38,7 +38,7 @@ vim.g.UltiSnipsJumpForwardTrigger = "<C-l>"
 vim.g.UltiSnipsJumpBackwardTrigger = "<C-h>"
 -- UtiSnips change trigger key
 --
-vim.g.UltiSnipsExpandTrigger = "<C-l>"
+-- vim.g.UltiSnipsExpandTrigger = "<C-l>"
 -- vim.g.UltiSnipsJumpForwardTrigger = "<C-l#region
 --
 -- vim.g.copilot_no_tab_map = true

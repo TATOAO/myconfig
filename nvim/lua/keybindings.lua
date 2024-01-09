@@ -10,8 +10,8 @@ map("v", "K", ":move '<-2<CR>gv-gv", opt)
 
 
 if vim.fn.has("macunix") == 1 then
-	map("n", "I", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>i", opt)
-	map("n", "O", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>o", opt)
+	-- map("n", "I", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>i", opt)
+	-- map("n", "O", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>o", opt)
 elseif vim.fn.has("unix") == 1 then
 	-- map("i", "I", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>i", opt)
 	-- map("i", "O", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>o", opt)
@@ -129,6 +129,9 @@ map("x", "<leader>t", "<C-u>:ToggleTermSendVisualLines<CR>", opt)
 map("n", "<leader>ds", ":%s/self:\\W\\=.\\{-},/self,/<CR>/from .__init__<CR>:CommentToggle<CR>:nohl<CR>", opt)
 -- map("n", "<leader>sd", ":%s/self:\\W\\=.\\{-},/self,/<CR>/from .__init__<CR>:CommentToggle<CR>:nohl<CR>", opt)
 map("x", "<leader>sd", 'y:%s/self, /self: <C-r><C-r>", /<CR>/from .__init__<CR>:nohl<CR>:CommentToggle<CR>', opt)
+
+-- dap set break point
+map("n", "<leader>b", 'y:%s/self, /self: <C-r><C-r>", /<CR>/from .__init__<CR>:nohl<CR>:CommentToggle<CR>', opt)
 
 
 return pluginKeys

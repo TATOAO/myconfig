@@ -64,5 +64,8 @@ require("lazy").setup({
 	'simrat39/symbols-outline.nvim',
 	'nanotee/sqls.nvim',
 	'karb94/neoscroll.nvim',
-		{'akinsho/toggleterm.nvim', version = "*", config = true},
+	{'akinsho/toggleterm.nvim', version = "*", config = true},
+
+	-- debug
+	'mfussenegger/nvim-dap',
 })
