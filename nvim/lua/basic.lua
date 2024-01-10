@@ -1,5 +1,8 @@
 vim.g.encoding = "UTF-8"
 
+vim.opt.undodir = vim.fn.expand('~/.vim/undodir')
+vim.o.undofile = true
+
 -- set up nvimTree
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
