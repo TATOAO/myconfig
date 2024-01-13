@@ -1,12 +1,10 @@
-import pandas as pd
+# import pandas as pd
 import sys 
 
 
+# pd.read_csv()
 
-
-pd.read_csv()
-
-class j():
+class Jclass():
     def this_is_my_function(self, alan="name"):
         """
         this is a definition
@@ -18,10 +16,14 @@ class j():
 
     def fjwiefj(self, jwefjoiwej):
         for i in range(10):
-            for j in range(k):
+            for j in range(10):
                 print("shit")
 
+                print(j)
+                print('sss')
 
+
+Jclass().fjwiefj('wewfewf')
     
 
 print('xxxxx')
