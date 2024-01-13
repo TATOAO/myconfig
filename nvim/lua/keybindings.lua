@@ -126,5 +126,12 @@ map("x", "<leader>t", "<C-u>:ToggleTermSendVisualLines<CR>", opt)
 
 
 
+map("n", "<leader>c", ":DapContinue<CR>", opt)
+map("n", "gb", ":DapToggleBreakpoint<CR>", opt)
+map("n", "gn", ":DapStepOver<CR>", opt)
+map("n", "gs", ":DapStepInto<CR>", opt)
+map("n", "go", ":DapStepOut<CR>", opt)
+map("n", "<leader>d", ":DapToggleRepl<CR><C-w>j", opt)
+map("n", "<leader>c", ":DapContinue<CR>", opt)
 
 return pluginKeys

@@ -69,5 +69,7 @@ require("lazy").setup({
 		'mrcjkb/rustaceanvim',
 		version = '^3', -- Recommended
 		ft = { 'rust' },
-	}
+	},
+	'mfussenegger/nvim-dap',
+	'theHamsta/nvim-dap-virtual-text'
 })
