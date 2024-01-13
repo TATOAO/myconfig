@@ -9,9 +9,8 @@ vim.g.loaded_netrwPlugin = 1
 
 
 -- TODO set by username
-vim.g.python3_host_prog = "/home/atatlan/anaconda3/bin/python"
-vim.g.python_host_prog = "/home/atatlan/anaconda3/bin/python"
-
+vim.g.python3_host_prog = "/Users/tatoaoliang/miniconda3/bin/python"
+vim.g.python_host_prog = "/Users/tatoaoliang/miniconda3/bin/python"
 
 
 -- utf8
@@ -40,9 +39,10 @@ vim.o.sidescrolloff = 4
 -- UtiSnips
 vim.g.UltiSnipsJumpForwardTrigger = "<C-l>"
 vim.g.UltiSnipsJumpBackwardTrigger = "<C-h>"
+vim.g.UltiSnipsExpandTrigger = "<tab>"
 -- UtiSnips change trigger key
 --
-vim.g.UltiSnipsExpandTrigger = "<C-l>"
+-- vim.g.UltiSnipsExpandTrigger = "<C-l>"
 -- vim.g.UltiSnipsJumpForwardTrigger = "<C-l#region
 --
 -- vim.g.copilot_no_tab_map = true
