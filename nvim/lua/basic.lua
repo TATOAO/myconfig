@@ -8,9 +8,12 @@ vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
 
+local helper = require('helper')
+
 -- TODO set by username
-vim.g.python3_host_prog = "/Users/tatoaoliang/miniconda3/bin/python"
-vim.g.python_host_prog = "/Users/tatoaoliang/miniconda3/bin/python"
+
+vim.g.python3_host_prog = helper.python_path
+vim.g.python_host_prog = helper.python_path
 
 
 -- utf8
@@ -34,12 +37,10 @@ vim.o.scrolloff = 4
 vim.o.sidescrolloff = 4
 
 
-
-
 -- UtiSnips
+vim.g.UltiSnipsExpandTrigger = "<tab>"
 vim.g.UltiSnipsJumpForwardTrigger = "<C-l>"
 vim.g.UltiSnipsJumpBackwardTrigger = "<C-h>"
-vim.g.UltiSnipsExpandTrigger = "<tab>"
 -- UtiSnips change trigger key
 --
 -- vim.g.UltiSnipsExpandTrigger = "<C-l>"

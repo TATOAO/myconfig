@@ -1,4 +1,5 @@
 local lspconfig = require("lspconfig")
+local helper = require('helper')
 local opts = {
 	settings = {
 		python = {
@@ -8,7 +9,7 @@ local opts = {
 				useLibraryCodeForTypes = true,
 				-- extraPaths = { "/Users/tatoaoliang/.config/nvim" }
 			},
-			pythonPath = "/home/atatlan/anaconda3/envs/moral3/bin/python"
+			pythonPath = helper.python_path
 		}
 
 	},
