@@ -23,12 +23,13 @@ treesitter.setup({
 			scope_incremental = "<TAB>",
 		},
 	},
+	-- pyfold = {
+	-- 	enable = true,
+	-- 	custom_foldtext = true
+	-- }
 })
 
 -- 开启 Folding 模块
 -- vim.opt.foldmethod = "indent"
-vim.opt.foldmethod = "manual"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
--- 默认不要折叠
--- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
-vim.opt.foldlevel = 99
+-- vim.opt.foldmethod = "manual"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"

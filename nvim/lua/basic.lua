@@ -8,6 +8,11 @@ vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
 
+-- set up nvimtreesitter for folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+
 local helper = require('helper')
 
 -- TODO set by username
