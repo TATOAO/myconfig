@@ -1,5 +1,6 @@
 local lspconfig = require("lspconfig")
 local helper = require('helper')
+
 local opts = {
 	settings = {
 		python = {
@@ -11,7 +12,6 @@ local opts = {
 			},
 			pythonPath = helper.python_path
 		}
-
 	},
 	flags = {
 		debounce_text_changes = 150,
