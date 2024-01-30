@@ -72,8 +72,7 @@ require("lazy").setup({
 	},
 	'mfussenegger/nvim-dap',
 	'theHamsta/nvim-dap-virtual-text',
-	{'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'},
-	{'neoclide/coc.nvim', branch = 'master', run = 'yarn install --frozen-lockfile'}
+	{'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'}
 	-- 'eddiebergman/nvim-treesitter-pyfold'
 })
 
