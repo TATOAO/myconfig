@@ -10,8 +10,8 @@ map("v", "K", ":move '<-2<CR>gv-gv", opt)
 
 
 if vim.fn.has("macunix") == 1 then
-	map("n", "I", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>i", opt)
-	map("n", "O", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>o", opt)
+	-- map("n", "I", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>i", opt)
+	-- map("n", "O", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>o", opt)
 elseif vim.fn.has("unix") == 1 then
 	-- map("i", "I", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>i", opt)
 	-- map("i", "O", "<Esc>:! im-select com.apple.inputmethod.SCIM.Shuangpin<CR>o", opt)
@@ -134,4 +134,16 @@ map("n", "go", ":DapStepOut<CR>", opt)
 map("n", "<leader>d", ":DapToggleRepl<CR><C-w>j", opt)
 map("n", "<leader>c", ":DapContinue<CR>", opt)
 
+
+
+map("n", "<leader>xx", "<cmd>lua require(\"trouble\").toggle() <CR>", opt)
+map("n", "<leader>xw", "<cmd>lua require(\"trouble\").toggle(\"workspace_diagnostics\") <CR>", opt)
+map("n", "<leader>xd", "<cmd>lua require(\"trouble\").toggle(\"document_diagnostics\") <CR>", opt)
+map("n", "<leader>xq", "<cmd>lua require(\"trouble\").toggle(\"quickfix\") <CR>", opt)
+map("n", "<leader>xl", "<cmd>lua require(\"trouble\").toggle(\"loclist\") <CR>", opt)
+map("n", "gR", "<cmd>lua require(\"trouble\").toggle(\"lsp_references\") <CR>", opt)
+
 return pluginKeys
+
+
+-- Lua

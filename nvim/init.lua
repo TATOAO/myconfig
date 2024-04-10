@@ -74,6 +74,8 @@ require("toggleterm").setup {}
 require('plugin-config.python-dap')
 require('plugin-config.nvim-dap-virtual-text')
 require('plugin-config.nvim-ufo')
+require('plugin-config.null-ls')
+require('plugin-config.trouble')
 
 -- require('indent_object').setup()
 --

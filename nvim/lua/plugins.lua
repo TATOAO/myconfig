@@ -72,7 +72,17 @@ require("lazy").setup({
 	},
 	'mfussenegger/nvim-dap',
 	'theHamsta/nvim-dap-virtual-text',
-	{'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'}
+	'nvimtools/none-ls.nvim',
+	{'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'},
+	{
+	"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {
+		-- your configuration comes here
+		-- or leave it empty to use the default settings
+		-- refer to the configuration section below
+		},
+	}
 	-- 'eddiebergman/nvim-treesitter-pyfold'
 })
 
