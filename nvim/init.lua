@@ -74,6 +74,7 @@ require('plugin-config.nvim-dap-virtual-text')
 require('plugin-config.nvim-ufo')
 require('plugin-config.null-ls')
 require('plugin-config.trouble')
+require('plugin-config.diffview')
 
 -- require('indent_object').setup()
 --
