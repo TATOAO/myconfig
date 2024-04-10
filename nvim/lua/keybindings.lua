@@ -86,15 +86,11 @@ pluginKeys.mapLSP = function(mapbuf)
 	mapbuf("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
 	mapbuf("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
 	mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
-	--
-	mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
 	-- mapbuf("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opt)
 	mapbuf('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opt)
 	mapbuf('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opt)
 	mapbuf('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opt)
 end
-
--- vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopt
 
 pluginKeys.cmp = function(cmp)
 	return {
@@ -142,6 +138,10 @@ map("n", "<leader>xd", "<cmd>lua require(\"trouble\").toggle(\"document_diagnost
 map("n", "<leader>xq", "<cmd>lua require(\"trouble\").toggle(\"quickfix\") <CR>", opt)
 map("n", "<leader>xl", "<cmd>lua require(\"trouble\").toggle(\"loclist\") <CR>", opt)
 map("n", "gR", "<cmd>lua require(\"trouble\").toggle(\"lsp_references\") <CR>", opt)
+
+
+-- formater
+map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true }) <CR>", opt)
 
 return pluginKeys
 

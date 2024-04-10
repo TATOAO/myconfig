@@ -1,4 +1,5 @@
 require("lazy").setup({
+
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	{ "neovim/nvim-lspconfig" },
@@ -7,6 +8,7 @@ require("lazy").setup({
 	"rktjmp/lush.nvim",
 	"terrortylor/nvim-comment",
 	{ "lukas-reineke/indent-blankline.nvim" },
+	'rmehri01/onenord.nvim',
 
 	{ "catppuccin/nvim", as = "catppuccin" },
 	{"loctvl842/monokai-pro.nvim",
