@@ -13,8 +13,9 @@ local configPath = "~/.config/nvim/lua/plugin-config/sql_formatter_config.json"
 -- -- config for sql
 require("conform").formatters.sql_formatter = {
   command = "sql-formatter",
-  args = {},
+  args = {"--version"},
   -- args = {"--config", configPath},
+  -- args = {"-o", "~/.config/nvim/lua/plugin-config/shit.sql"},
   does_write = false,
 }
 
