@@ -1,0 +1,16 @@
+Executing: --config ~/.config/nvim/lua/plugin-config/sql_formatter_config.json
+Executing: 
+Executing: --config /Users/tatoaoliang/.config/nvim/lua/plugin-config/sql_formatter_config.json
+Executing: --config ~/.config/nvim/lua/plugin-config/sql_formatter_config.json
+Executing: --config ~/.config/nvim/lua/plugin-config/sql_formatter_config.json
+Executing: --config ~/.config/nvim/lua/plugin-config/sql_formatter_config.json
+Executing: --config ~/.config/nvim/lua/plugin-config/sql_formatter_config.json
+Executing: --config ~/.config/nvim/lua/plugin-config/sql_formatter_config.json
+Executing: --config ~/.config/nvim/lua/plugin-config/sql_formatter_config.json
+Executing: --config ~/.config/nvim/lua/plugin-config/sql_formatter_config.json
+Executing: --config ~/.config/nvim/lua/plugin-config/sql_formatter_config.json
+Executing: --config ~/.config/nvim/lua/plugin-config/sql_formatter_config.json
+Executing: 
+Executing: 
+Executing: 
+Executing: 

@@ -1,6 +1,5 @@
-# import pandas as pd
+import os
 import sys
-
 
 # pd.read_csv()
 
@@ -23,10 +22,13 @@ class Jclass:
                 print("sss")
 
 
-a = [1,3,
-     2,
-     324
-     ]
+a = [1, 3, 
+     2, 324]
+
+
+bb = [ 3,
+      3,
+      0]
 Jclass().fjwiefj("wewfewf")
 
 

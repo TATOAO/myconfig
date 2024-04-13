@@ -112,9 +112,10 @@ require("lazy").setup({
 			-- (fugitive is still needed to open in browser)
 			"sindrets/diffview.nvim",
 		},
+	},
+	{
+	'stevearc/conform.nvim',
+	opts = {},
 	}
-
-
-
 })
 

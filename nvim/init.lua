@@ -1,6 +1,9 @@
 
 require('basic')
 
+-- vim.log.levels.DEBUG = true  -- Ensure DEBUG messages are not filtered out
+
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -75,6 +78,7 @@ require('plugin-config.nvim-ufo')
 require('plugin-config.null-ls')
 require('plugin-config.trouble')
 require('plugin-config.diffview')
+require('plugin-config.conform')
 
 -- require('indent_object').setup()
 --
