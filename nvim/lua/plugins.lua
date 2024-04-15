@@ -1,6 +1,18 @@
 require("lazy").setup({
 
-	"williamboman/mason.nvim",
+	{
+		"williamboman/mason.nvim",
+		opts = {
+			ensure_installed = {
+				"pyright",
+				"sql-formatter",
+				"autopep8",
+				"black",
+				"isort",
+			}
+		},
+		
+	},
 	"williamboman/mason-lspconfig.nvim",
 	{ "neovim/nvim-lspconfig" },
 

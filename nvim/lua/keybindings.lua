@@ -143,7 +143,7 @@ map("n", "gR", "<cmd>lua require(\"trouble\").toggle(\"lsp_references\") <CR>", 
 -- formater
 -- map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true }) <CR>", opt)
 map("n", "<leader>f", "<cmd>lua require(\"conform\").format() <CR>", opt)
-map("x", "<leader>f", "<C-u>: <cmd>lua require(\"conform\").format() <CR>", opt)
+map("x", "<leader>f", "<C-u>:<cmd>lua require(\"conform\").formatexpr()<CR>", opt)
 
 return pluginKeys
 
