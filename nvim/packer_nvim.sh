@@ -20,4 +20,5 @@ tar -czvf "$config_destination_folder/nvim_config_$dt.tar.gz" "./nvim"
 cd "$home/.local/share/"
 tar -czvf "$config_destination_folder/nvim_package_$dt.tar.gz" "./nvim"
 
-
+# mkdir -p "$HOME/.config/nvim" 
+# tar -xzvf neovim_plugins.tar.gz -C "$HOME/.config/"
