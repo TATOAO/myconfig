@@ -16,15 +16,5 @@ local default_python = helper.capture('which python')
 local username = helper.capture('whoami')
 helper.python_path = default_python
 
-if (username == 'tatoaoliang')
-then
-	helper.python_path = "/Users/tatoaoliang/miniconda3/bin/python"
-
-elseif (username == 'atatlan')
-then
-	helper.python_path = "/home/atatlan/anaconda3/envs/moral3/bin/python"
-else
-	print("用户识别失败")
-end
 
 return helper
