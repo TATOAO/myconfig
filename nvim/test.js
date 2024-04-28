@@ -3,7 +3,6 @@ var sssss = "sdfwfw";
 
 
 
-jjj = 'wfwef';
 
 
 function describe(){
