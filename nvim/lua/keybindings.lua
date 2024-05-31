@@ -34,6 +34,7 @@ map("n", "˚", ":resize -1<CR>", opt)
 -- nvimTree
 -- Alt/Opt + m
 map("n", "µ", ":NvimTreeToggle<CR>", opt)
+map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
 
 
 

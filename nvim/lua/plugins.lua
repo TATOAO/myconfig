@@ -9,9 +9,11 @@ require("lazy").setup({
 				"autopep8",
 				"black",
 				"isort",
+				"stylua",
+				"lua_ls"
 			}
 		},
-		
+	
 	},
 	"williamboman/mason-lspconfig.nvim",
 	{ "neovim/nvim-lspconfig" },
@@ -42,17 +44,6 @@ require("lazy").setup({
 	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 	'nvim-treesitter/nvim-treesitter-textobjects',
 
-	-- markdown
-	{
-		"iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		build = "cd app && yarn install",
-		init = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-		end,
-		ft = { "markdown" },
-	},
-	
 	-- Magma
 	{ 'dccsillag/magma-nvim', build = ':UpdateRemotePlugins' },
 
@@ -134,6 +125,14 @@ require("lazy").setup({
 	{
 	'stevearc/conform.nvim',
 	opts = {},
+	},
+
+	-- install without yarn or npm
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function() vim.fn["mkdp#util#install"]() end,
 	}
 })
 

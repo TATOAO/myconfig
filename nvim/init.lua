@@ -1,22 +1,19 @@
-
-require('basic')
+require("basic")
 
 -- vim.log.levels.DEBUG = true  -- Ensure DEBUG messages are not filtered out
 
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
-
 
 require("keybindings")
 
@@ -31,7 +28,6 @@ require("plugin-config.nvim-tree")
 require("plugin-config.lualine")
 
 require("plugin-config.telescope")
-
 
 -- image
 --
@@ -63,14 +59,13 @@ require("mason").setup()
 
 require("mason-lspconfig").setup()
 
-require('neoscroll').setup()
+require("neoscroll").setup()
 
-require('plugin-config.treesitter_textobject')
+require("plugin-config.treesitter_textobject")
 
 -- require("toggleterm-config")
 
-require("toggleterm").setup {}
-
+require("toggleterm").setup({})
 
 require('plugin-config.python-dap')
 require('plugin-config.nvim-dap-virtual-text')
