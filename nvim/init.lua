@@ -79,6 +79,7 @@ require('plugin-config.null-ls')
 require('plugin-config.trouble')
 require('plugin-config.diffview')
 require('plugin-config.conform')
+require('plugin-config.markdown_preview')
 
 -- require('indent_object').setup()
 --
