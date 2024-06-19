@@ -1,5 +1,5 @@
 vim.g.encoding = "UTF-8"
-
+vim.lsp.set_log_level("debug")
 vim.opt.undodir = vim.fn.expand('~/.vim/undodir')
 vim.o.undofile = true
 

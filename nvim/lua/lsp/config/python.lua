@@ -2,6 +2,9 @@ local lspconfig = require("lspconfig")
 local helper = require('helper')
 
 local opts = {
+	root_dir = function(fname)
+        return lspconfig.util.find_git_ancestor(fname) or vim.fn.getcwd()
+    end,
 	settings = {
 		python = {
 			analysis = {
