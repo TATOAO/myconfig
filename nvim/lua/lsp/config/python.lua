@@ -1,5 +1,4 @@
 local lspconfig = require("lspconfig")
-local opts = {
 local helper = require('helper')
 
 local opts = {
