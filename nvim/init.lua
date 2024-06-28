@@ -75,6 +75,7 @@ require('plugin-config.trouble')
 require('plugin-config.diffview')
 require('plugin-config.conform')
 require('plugin-config.markdown_preview')
+require('plugin-config.mason_install')
 
 -- require('indent_object').setup()
 --
