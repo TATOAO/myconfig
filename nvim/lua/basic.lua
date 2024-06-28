@@ -1,13 +1,24 @@
 vim.g.encoding = "UTF-8"
+vim.lsp.set_log_level("debug")
+vim.opt.undodir = vim.fn.expand('~/.vim/undodir')
+vim.o.undofile = true
 
 -- set up nvimTree
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
 
+-- set up nvimtreesitter for folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+
+local helper = require('helper')
+
 -- TODO set by username
-vim.g.python3_host_prog = "/usr/local/bin/python3"
-vim.g.python_host_prog = "/usr/local/bin/python3"
+
+vim.g.python3_host_prog = helper.python_path
+vim.g.python_host_prog = helper.python_path
 
 
 -- utf8
@@ -31,9 +42,8 @@ vim.o.scrolloff = 4
 vim.o.sidescrolloff = 4
 
 
-
-
 -- UtiSnips
+vim.g.UltiSnipsExpandTrigger = "<tab>"
 vim.g.UltiSnipsJumpForwardTrigger = "<C-l>"
 vim.g.UltiSnipsJumpBackwardTrigger = "<C-h>"
 -- UtiSnips change trigger key

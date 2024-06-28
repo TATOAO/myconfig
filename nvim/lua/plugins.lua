@@ -7,6 +7,7 @@ require("lazy").setup({
 	"rktjmp/lush.nvim",
 	"terrortylor/nvim-comment",
 	{ "lukas-reineke/indent-blankline.nvim" },
+	'rmehri01/onenord.nvim',
 
 	{ "catppuccin/nvim", as = "catppuccin" },
 	{"loctvl842/monokai-pro.nvim",
@@ -22,17 +23,12 @@ require("lazy").setup({
 	"nvim-lualine/lualine.nvim",
 	"arkav/lualine-lsp-progress",
 	{
-	'nvim-telescope/telescope.nvim', tag = '0.1.1',
+	'nvim-telescope/telescope.nvim', tag = '0.1.5',
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
 	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 	'nvim-treesitter/nvim-treesitter-textobjects',
 
-	-- markdown
-	{"iamcco/markdown-preview.nvim",
-	    build = function() vim.fn["mkdp#util#install"]() end,
-	},
-	
 	-- Magma
 	{ 'dccsillag/magma-nvim', build = ':UpdateRemotePlugins' },
 
@@ -58,14 +54,73 @@ require("lazy").setup({
 				-- If you want to enable filetype detection based on treesitter:
 				-- requires = { "nvim-treesitter/nvim-treesitter" },
 			},
-},
+	},
 	-- csv vim
 	"chrisbra/csv.vim",
 	'simrat39/symbols-outline.nvim',
 	'nanotee/sqls.nvim',
 	'karb94/neoscroll.nvim',
 	{'akinsho/toggleterm.nvim', version = "*", config = true},
-
-	-- debug
+	{
+		'mrcjkb/rustaceanvim',
+		version = '^3', -- Recommended
+		ft = { 'rust' },
+	},
 	'mfussenegger/nvim-dap',
+	'theHamsta/nvim-dap-virtual-text',
+
+	-- { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
+
+	'nvimtools/none-ls.nvim',
+	{'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'},
+	{
+	"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {
+		-- your configuration comes here
+		-- or leave it empty to use the default settings
+		-- refer to the configuration section below
+		},
+	},
+	-- 'eddiebergman/nvim-treesitter-pyfold'
+	{
+		"aaronhallaert/advanced-git-search.nvim",
+		cmd = { "AdvancedGitSearch" },
+		config = function()
+			-- optional: setup telescope before loading the extension
+			require("telescope").setup{
+				-- move this to the place where you call the telescope setup function
+				extensions = {
+					advanced_git_search = {
+							-- See Config
+						}
+				}
+			}
+
+			require("telescope").load_extension("advanced_git_search")
+		end,
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+			-- to show diff splits and open commits in browser
+			"tpope/vim-fugitive",
+			-- to open commits in browser with fugitive
+			"tpope/vim-rhubarb",
+			-- optional: to replace the diff from fugitive with diffview.nvim
+			-- (fugitive is still needed to open in browser)
+			"sindrets/diffview.nvim",
+		},
+	},
+	{
+	'stevearc/conform.nvim',
+	opts = {},
+	},
+
+	-- install without yarn or npm
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function() vim.fn["mkdp#util#install"]() end,
+	}
 })
+

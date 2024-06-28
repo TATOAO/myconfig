@@ -34,6 +34,7 @@ map("n", "˚", ":resize -1<CR>", opt)
 -- nvimTree
 -- Alt/Opt + m
 map("n", "µ", ":NvimTreeToggle<CR>", opt)
+map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
 
 
 
@@ -86,15 +87,11 @@ pluginKeys.mapLSP = function(mapbuf)
 	mapbuf("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
 	mapbuf("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
 	mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
-	--
-	mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
 	-- mapbuf("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opt)
 	mapbuf('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opt)
 	mapbuf('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opt)
 	mapbuf('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opt)
 end
-
--- vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopt
 
 pluginKeys.cmp = function(cmp)
 	return {
@@ -125,13 +122,31 @@ map("t", "<leader>\\", "<C-\\><C-n>:ToggleTerm<CR>", opt)
 map("x", "<leader>t", "<C-u>:ToggleTermSendVisualLines<CR>", opt)
 
 
--- delete self: xxx,
-map("n", "<leader>ds", ":%s/self:\\W\\=.\\{-},/self,/<CR>/from .__init__<CR>:CommentToggle<CR>:nohl<CR>", opt)
--- map("n", "<leader>sd", ":%s/self:\\W\\=.\\{-},/self,/<CR>/from .__init__<CR>:CommentToggle<CR>:nohl<CR>", opt)
-map("x", "<leader>sd", 'y:%s/self, /self: <C-r><C-r>", /<CR>/from .__init__<CR>:nohl<CR>:CommentToggle<CR>', opt)
 
--- dap set break point
-map("n", "<leader>b", 'y:%s/self, /self: <C-r><C-r>", /<CR>/from .__init__<CR>:nohl<CR>:CommentToggle<CR>', opt)
+map("n", "<leader>c", ":DapContinue<CR>", opt)
+map("n", "gb", ":DapToggleBreakpoint<CR>", opt)
+map("n", "gn", ":DapStepOver<CR>", opt)
+map("n", "gs", ":DapStepInto<CR>", opt)
+map("n", "go", ":DapStepOut<CR>", opt)
+map("n", "<leader>d", ":DapToggleRepl<CR><C-w>j", opt)
+map("n", "<leader>c", ":DapContinue<CR>", opt)
 
+
+
+map("n", "<leader>xx", "<cmd>lua require(\"trouble\").toggle() <CR>", opt)
+map("n", "<leader>xw", "<cmd>lua require(\"trouble\").toggle(\"workspace_diagnostics\") <CR>", opt)
+map("n", "<leader>xd", "<cmd>lua require(\"trouble\").toggle(\"document_diagnostics\") <CR>", opt)
+map("n", "<leader>xq", "<cmd>lua require(\"trouble\").toggle(\"quickfix\") <CR>", opt)
+map("n", "<leader>xl", "<cmd>lua require(\"trouble\").toggle(\"loclist\") <CR>", opt)
+map("n", "gR", "<cmd>lua require(\"trouble\").toggle(\"lsp_references\") <CR>", opt)
+
+
+-- formater
+-- map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true }) <CR>", opt)
+map("n", "<leader>f", "<cmd>lua require(\"conform\").format() <CR>", opt)
+map("x", "<leader>f", "<C-u>:<cmd>lua require(\"conform\").formatexpr()<CR>", opt)
 
 return pluginKeys
+
+
+-- Lua

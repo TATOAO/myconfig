@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import pandas as pd
 import sys 
 
@@ -7,6 +8,13 @@ import sys
 pd.read_csv()
 
 class j():
+import os
+import sys
+
+# pd.read_csv()
+
+
+class Jclass:
     def this_is_my_function(self, alan="name"):
         """
         this is a definition
@@ -15,22 +23,29 @@ class j():
         """
         return "ssss"
 
-
     def fjwiefj(self, jwefjoiwej):
         for i in range(10):
-            for j in range(k):
+            for j in range(10):
                 print("shit")
 
+                print(j)
+                print("sss")
 
-    
 
-print('xxxxx')
-print(('hi'
-       'sjdfljweiljfilwef'
-       'wefwefjwelifjiwefj'
-       ))
+a = [1, 3, 
+     2, 324]
 
-o = 'sssss'
+
+bb = [ 3,
+      3,
+      0]
+Jclass().fjwiefj("wewfewf")
+
+
+print("xxxxx")
+print(("hi" "sjdfljweiljfilwef" "wefwefjwelifjiwefj"))
+
+o = "sssss"
 
 
 k = 1
@@ -39,7 +54,6 @@ k = 1
 j = j
 
 k += 1
-
 
 
 
