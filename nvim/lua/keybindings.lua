@@ -37,8 +37,6 @@ map("n", "µ", ":NvimTreeToggle<CR>", opt)
 map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
 
 
-
-
 -----   Bufferline move between left and right tag
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 map("i", "<C-l>", "<C-[>:BufferLineCycleNext<CR>", opt)
@@ -50,9 +48,44 @@ map("n", "<C-q>", ":Bdelete <CR>", opt)
 
 -- Telescope search by cotent
 -- 全局搜索
-map("n", "<C-s>", ":Telescope live_grep<CR>", opt)
-map("n", "ß", ":Telescope find_files<CR>", opt)
+map("n", "<C-s>", ":w<CR>", opt)
 
+map(
+	"n",
+	"<leader>ww",
+	"<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+	opt
+)
+
+
+map(
+	"n",
+	"<leader>wb",
+	"<cmd>lua require('telescope.builtin').buffers()<CR>",
+	opt
+)
+
+map(
+	"n",
+	"<leader>wl",
+	"<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>",
+	opt
+)
+
+map(
+	"n",
+	"<leader>ws",
+	"<cmd>lua require('telescope.builtin').git_status()<CR>",
+	opt
+)
+
+
+map(
+	"n",
+	"<leader>wg",
+	"<cmd>lua require('telescope.builtin').git_bcommits(require('telescope.themes').get_dropdown({}))<CR>",
+	opt
+)
 
 
 -- Magma
@@ -115,12 +148,19 @@ pluginKeys.cmp = function(cmp)
 end
 
 -- toggle terminal
-map("t", "<C-[>", "<C-\\><C-n>", opt)
-map("t", "esc", "<C-\\><C-n>", opt)
-map("n", "<leader>\\", ":ToggleTerm<CR>", opt)
-map("t", "<leader>\\", "<C-\\><C-n>:ToggleTerm<CR>", opt)
-map("x", "<leader>t", "<C-u>:ToggleTermSendVisualLines<CR>", opt)
+-- map("t", "<C-[>", "<C-\\><C-n>", opt)
+-- map("t", "<esc>", "<C-\\><C-n>", opt)
+-- map("n", "<leader>\\", ":ToggleTerm<CR>", opt)
+-- map("t", "<leader>\\", "<C-\\><C-n>:ToggleTerm<CR>", opt)
+-- map("x", "<leader>t", "<C-u>:ToggleTermSendVisualLines<CR>", opt)
 
+map("t", "<C-[>", "<C-\\><C-n>", opt)
+map("t", "<esc>", "<C-\\><C-n>", opt)
+map("n", "<leader>\\", ":FloatermToggle<CR>", opt)
+map("t", "<leader>\\", "<C-\\><C-n>:FloatermToggle<CR>", opt)
+map("t", "<leader>tn", "<C-\\><C-n>:FloatermNew<CR>", opt)
+map("t", "<leader>tj", "<C-\\><C-n>:FloatermNext<CR>", opt)
+map("t", "<leader>tk", "<C-\\><C-n>:FloatermPrev<CR>", opt)
 
 
 map("n", "<leader>c", ":DapContinue<CR>", opt)
@@ -143,8 +183,8 @@ map("n", "gR", "<cmd>lua require(\"trouble\").toggle(\"lsp_references\") <CR>", 
 
 -- formater
 -- map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true }) <CR>", opt)
-map("n", "<leader>f", "<cmd>lua require(\"conform\").format() <CR>", opt)
-map("x", "<leader>f", "<C-u>:<cmd>lua require(\"conform\").formatexpr()<CR>", opt)
+map("n", "<leader>ff", "<cmd>lua require(\"conform\").format() <CR>", opt)
+map("x", "<leader>ff", "<C-u>:<cmd>lua require(\"conform\").formatexpr()<CR>", opt)
 
 return pluginKeys
 

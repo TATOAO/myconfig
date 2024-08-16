@@ -63,10 +63,7 @@ require("neoscroll").setup()
 
 require("plugin-config.treesitter_textobject")
 
--- require("toggleterm-config")
-
-require("toggleterm").setup({})
-
+require("plugin-config.toggleterm-config")
 require('plugin-config.python-dap')
 require('plugin-config.nvim-dap-virtual-text')
 require('plugin-config.nvim-ufo')
