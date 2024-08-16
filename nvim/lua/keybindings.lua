@@ -38,7 +38,6 @@ map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
 
 
 
-
 -----   Bufferline move between left and right tag
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 map("i", "<C-l>", "<C-[>:BufferLineCycleNext<CR>", opt)
@@ -116,7 +115,7 @@ end
 
 -- toggle terminal
 map("t", "<C-[>", "<C-\\><C-n>", opt)
-map("t", "esc", "<C-\\><C-n>", opt)
+map("t", "<esc>", "<C-\\><C-n>", opt)
 map("n", "<leader>\\", ":ToggleTerm<CR>", opt)
 map("t", "<leader>\\", "<C-\\><C-n>:ToggleTerm<CR>", opt)
 map("x", "<leader>t", "<C-u>:ToggleTermSendVisualLines<CR>", opt)
