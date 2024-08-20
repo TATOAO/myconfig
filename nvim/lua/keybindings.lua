@@ -156,11 +156,24 @@ end
 
 map("t", "<C-[>", "<C-\\><C-n>", opt)
 map("t", "<esc>", "<C-\\><C-n>", opt)
+
 map("n", "<leader>\\", ":FloatermToggle<CR>", opt)
 map("t", "<leader>\\", "<C-\\><C-n>:FloatermToggle<CR>", opt)
+
 map("t", "<leader>tn", "<C-\\><C-n>:FloatermNew<CR>", opt)
+map("n", "<leader>tn", ":FloatermNew<CR>", opt)
+
 map("t", "<leader>tj", "<C-\\><C-n>:FloatermNext<CR>", opt)
+map("n", "<leader>tj", ":FloatermNext<CR>", opt)
+
 map("t", "<leader>tk", "<C-\\><C-n>:FloatermPrev<CR>", opt)
+map("n", "<leader>tk", ":FloatermPrev<CR>", opt)
+
+
+map("t", "<leader>tq", "<C-\\><C-n>:FloatermKill<CR>:FloatermToggle<CR>", opt)
+map("n", "<leader>tq", ":FloatermKill<CR>:FloatermToggle<CR>", opt)
+
+
 
 
 map("n", "<leader>c", ":DapContinue<CR>", opt)
@@ -170,7 +183,6 @@ map("n", "gs", ":DapStepInto<CR>", opt)
 map("n", "go", ":DapStepOut<CR>", opt)
 map("n", "<leader>d", ":DapToggleRepl<CR><C-w>j", opt)
 map("n", "<leader>c", ":DapContinue<CR>", opt)
-
 
 
 map("n", "<leader>xx", "<cmd>lua require(\"trouble\").toggle() <CR>", opt)

@@ -20,6 +20,9 @@ local helper = require('helper')
 vim.g.python3_host_prog = helper.python_path
 vim.g.python_host_prog = helper.python_path
 
+vim.g.floaterm_width = 120
+vim.g.floaterm_height = 30
+
 
 -- utf8
 vim.g.encoding = "UTF-8"
