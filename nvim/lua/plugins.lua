@@ -141,6 +141,31 @@ require("lazy").setup({
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },
 		build = function() vim.fn["mkdp#util#install"]() end,
-	}
+	},
+
+	-- leetcode
+	{
+    "kawre/leetcode.nvim",
+    build = ":TSUpdate html",
+    dependencies = {
+        "nvim-telescope/telescope.nvim",
+        "nvim-lua/plenary.nvim", -- required by telescope
+        "MunifTanjim/nui.nvim",
+
+        -- optional
+        "nvim-treesitter/nvim-treesitter",
+        "rcarriga/nvim-notify",
+        "nvim-tree/nvim-web-devicons",
+    },
+    opts = {
+        -- configuration goes here
+		cn = { -- leetcode.cn
+			enabled = true, ---@type boolean
+			translator = true, ---@type boolean
+			translate_problems = true, ---@type boolean
+		},
+		lange = "python3"
+    },
+}
 })
 
