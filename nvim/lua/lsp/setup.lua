@@ -5,7 +5,8 @@ require("mason-lspconfig").setup()
 
 require("lsp.config.python")
 require("lsp.config.lua")
-require("lsp.config.js")
+require("lsp.config.tsserver")
+-- require("lsp.config.js")
 
 -- require("lsp.config.rust")
 -- require("lsp.config.sql")
