@@ -2,7 +2,7 @@
 local lspconfig = require('lspconfig')
 
 -- Setup tsserver (TypeScript Server)
-lspconfig.tsserver.setup {
+lspconfig.ts_ls.setup {
     on_attach = function(client, bufnr)
         -- Optional: Disable tsserver formatting if you are using another formatter
         client.server_capabilities.document_formatting = false
