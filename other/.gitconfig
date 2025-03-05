@@ -1,0 +1,12 @@
+[difftool]
+    prompt = true
+[diff]
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+
+[alias]
+  st = status
+  cim = commit -m 
+  br = branch
+  co = checkout
