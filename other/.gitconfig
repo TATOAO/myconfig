@@ -10,3 +10,6 @@
   cim = commit -m 
   br = branch
   co = checkout
+
+ [core]
+  quotepath = false
